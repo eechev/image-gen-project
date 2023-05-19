@@ -1,6 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+//secure method to retrive secrets from .env file
 
-module.exports = nextConfig
+const dotenv = require("dotenv");
+
+dotenv.config();
+
+module.exports = {
+  publicRuntimeConfig: {
+    aiApiKey: process.env.AI_API_KEY,
+  },
+};
